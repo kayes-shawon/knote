@@ -3,10 +3,11 @@ package models
 import "fmt"
 
 type Note struct {
-	Id int64
-	Title string
-	Content string
-	Tag string
+	tableName struct{} `pg:"students"`
+	Id int64 `json:"id" pg:"id"`
+	Title string `json:"title" pg:"title"`
+	Content string `json:"content" pg:"content"`
+	Tag string `json:"tag" pg:"tag"`
 }
 
 func (n *Note) String() string  {
