@@ -3,7 +3,7 @@ package models
 import "fmt"
 
 type Note struct {
-	tableName struct{} `pg:"students"`
+	tableName struct{} `pg:"knote"`
 	Id int64 `json:"id" pg:"id"`
 	Title string `json:"title" pg:"title"`
 	Content string `json:"content" pg:"content"`
@@ -11,7 +11,7 @@ type Note struct {
 }
 
 func (n *Note) String() string  {
-	return fmt.Sprintf("Title: %s, Content: %s", n.Title, n.Content)
+	return fmt.Sprintf("Id: %d, Title: %s, Content: %s", n.Id, n.Title, n.Content)
 }
 
 
