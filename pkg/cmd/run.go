@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/kayes-shawon/knote/pkg/api"
 	_ "github.com/kayes-shawon/knote/pkg/models"
+	"github.com/kayes-shawon/knote/pkg/urls"
 	"log"
 	"net/http"
 )
@@ -10,6 +10,6 @@ import (
 
 
 func RunServer() {
-	http.HandleFunc("/create/post", api.CreateNote)
+	urls.UrlPatterns()
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
